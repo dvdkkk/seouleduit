@@ -14,6 +14,7 @@ import { FastInquirySection } from './components/FastInquirySection';
 import { FooterSection } from './components/FooterSection';
 import { ApplicationModal } from './components/ApplicationModal';
 import { StipendCalculatorModal } from './components/StipendCalculatorModal';
+import { openApplicationUrl } from './utils/navigation';
 
 import { StickyBottomBar } from './components/StickyBottomBar';
 import { CustomCursor } from './components/CustomCursor';
@@ -25,16 +26,7 @@ export default function App() {
   const handleOpenApplication = () => {
     setIsApplicationOpen(false);
     setIsCalculatorOpen(false);
-    const formElement = document.getElementById('fast-inquiry-form');
-    const sectionElement = document.getElementById('fast-inquiry');
-
-    if (window.innerWidth < 1024 && formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    openApplicationUrl();
   };
 
   return (

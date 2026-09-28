@@ -2,6 +2,7 @@ import React from 'react';
 import { TARGET_AUDIENCE } from '../data/bootcampData';
 import { Compass, Cpu, Target, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, UserPlus, Gift } from 'lucide-react';
 import { ScrollReveal, StaggerContainer, StaggerItem } from './ScrollReveal';
+import { openApplicationUrl } from '../utils/navigation';
 
 export const TargetAudienceSection: React.FC = () => {
   const getIcon = (iconName: string) => {
@@ -19,17 +20,8 @@ export const TargetAudienceSection: React.FC = () => {
     }
   };
 
-  const handleInquiryScroll = () => {
-    const formElement = document.getElementById('fast-inquiry-form');
-    const sectionElement = document.getElementById('fast-inquiry');
-
-    if (window.innerWidth < 1024 && formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const handleInquiryClick = () => {
+    openApplicationUrl();
   };
 
   return (
@@ -152,8 +144,8 @@ export const TargetAudienceSection: React.FC = () => {
 
               {/* Action Button */}
               <button
-                onClick={handleInquiryScroll}
-                className="shrink-0 px-7 py-4 rounded-xl bg-gradient-to-r from-[#c5a47e] via-[#e2d1c3] to-[#c5a47e] text-[#0a0b0d] font-black text-sm sm:text-base hover:shadow-[0_0_25px_rgba(197,164,126,0.6)] transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group shadow-xl"
+                onClick={handleInquiryClick}
+                className="shrink-0 px-7 py-4 rounded-xl bg-gradient-to-r from-[#c5a47e] via-[#e2d1c3] to-[#c5a47e] text-[#0a0b0d] font-black text-sm sm:text-base hover:shadow-[0_0_25px_rgba(197,164,126,0.6)] transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group shadow-xl cursor-pointer"
               >
                 <span>무료 수강상담 & 지원금 조회</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

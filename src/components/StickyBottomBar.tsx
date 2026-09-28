@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, Phone, ArrowRight, Zap, Calculator } from 'lucide-react';
+import { handlePhoneClick } from '../utils/navigation';
 
 interface StickyBottomBarProps {
   onOpenApplication: () => void;
@@ -37,8 +38,9 @@ export const StickyBottomBar: React.FC<StickyBottomBarProps> = ({
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <a
             href="tel:1661-8126"
-            className="p-2 sm:px-3 sm:py-2 rounded-xl bg-[#151720] text-gray-300 hover:text-white border border-[#c5a47e]/30 text-xs font-semibold flex items-center gap-1 shadow-md active:scale-95 transition-all"
-            title="전화상담 1661-8126"
+            onClick={handlePhoneClick}
+            className="p-2 sm:px-3 sm:py-2 rounded-xl bg-[#151720] text-gray-300 hover:text-white border border-[#c5a47e]/30 text-xs font-semibold flex items-center gap-1 shadow-md active:scale-95 transition-all cursor-pointer"
+            title="전화상담 1661-8126 (PC 클릭 시 상담신청 이동)"
           >
             <Phone className="w-4 h-4 text-[#c5a47e]" />
             <span className="hidden sm:inline">1661-8126</span>

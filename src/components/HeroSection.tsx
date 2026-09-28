@@ -2,6 +2,7 @@ import React from 'react';
 import { COURSE_SUMMARY } from '../data/bootcampData';
 import aiChipBg from '../assets/images/ai_chip_original_bg_1785136173674.jpg';
 import { ScrollReveal } from './ScrollReveal';
+import { handlePhoneClick } from '../utils/navigation';
 import {
   Sparkles,
   MapPin,
@@ -203,7 +204,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication, onO
 
             <div className="p-4 rounded-xl bg-[#0a0b0d] border border-[#c5a47e]/20 text-center">
               <span className="text-[11px] text-gray-400 block mb-1">문의 전화</span>
-              <a href="tel:1661-8126" className="text-xl font-black text-[#c5a47e] hover:underline">
+              <a
+                href="tel:1661-8126"
+                onClick={handlePhoneClick}
+                className="text-xl font-black text-[#c5a47e] hover:underline cursor-pointer"
+                title="전화 문의 (PC 클릭 시 상담신청 이동)"
+              >
                 1661-8126
               </a>
             </div>
